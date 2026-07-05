@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rag-chunking-eval"
+version = "0.1.0"
+description = "Measure how a chunking config changes retrieval quality: sweep chunk size x overlap x splitter over your docs + Q&A and report hit-rate@k and MRR@k. Hand-rolled BM25, offline, stdlib only."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ben Godgart" }]
+keywords = ["rag", "retrieval", "chunking", "bm25", "evals", "llm", "information-retrieval"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.scripts]
+chunkeval = "chunkeval.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/bengodgart/rag-chunking-eval"
+
+[tool.setuptools]
+packages = ["chunkeval"]

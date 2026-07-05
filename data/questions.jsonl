@@ -1,0 +1,10 @@
+{"id": "q01", "question": "How does photosynthesis store the energy it captures from sunlight?", "doc_id": "photosynthesis", "answer_span": "locks energy away inside molecules of glucose"}
+{"id": "q02", "question": "What molecule captures the energy released by cellular respiration?", "doc_id": "cellular_respiration", "answer_span": "captured as molecules of adenosine triphosphate"}
+{"id": "q03", "question": "What is the step of the water cycle where rain and snow fall called?", "doc_id": "water_cycle", "answer_span": "fall back as rain or snow in the step known as precipitation"}
+{"id": "q04", "question": "Over long timescales, what happens to carbon in the ocean?", "doc_id": "carbon_cycle", "answer_span": "buried in ocean sediment and slowly pressed into limestone"}
+{"id": "q05", "question": "What forms where two tectonic plates pull apart on the sea floor?", "doc_id": "plate_tectonics", "answer_span": "molten rock rises to form new ocean floor"}
+{"id": "q06", "question": "What drives the deep ocean overturning loop of currents?", "doc_id": "ocean_currents", "answer_span": "driven by differences in temperature and salt"}
+{"id": "q07", "question": "How do soil bacteria make atmospheric nitrogen usable to plants?", "doc_id": "nitrogen_cycle", "answer_span": "perform nitrogen fixation, turning the inert gas into compounds"}
+{"id": "q08", "question": "What surprising genetic material do mitochondria carry of their own?", "doc_id": "mitochondria", "answer_span": "carry their own small loop of DNA, separate from the DNA"}
+{"id": "q09", "question": "What does the ozone layer in the stratosphere do for us?", "doc_id": "atmosphere_layers", "answer_span": "a thin shield of gas that soaks up harmful ultraviolet"}
+{"id": "q10", "question": "Why are mitochondria called the powerhouse of the cell?", "doc_id": "mitochondria", "answer_span": "convert the energy in sugar into adenosine triphosphate"}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>chunkeval retrieval report</title>
+<style>
+  body{margin:0;background:#0f172a;color:#e2e8f0;font-family:-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;}
+  .wrap{max-width:840px;margin:0 auto;padding:32px 20px 64px;}
+  h1{font-size:1.6rem;margin:0 0 2px;}
+  h2{font-size:1.15rem;border-bottom:1px solid #334155;padding-bottom:.3em;margin:1.8em 0 .6em;color:#fff;}
+  .sub{color:#94a3b8;font-size:.9rem;}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.9rem;}
+  th{text-align:left;color:#94a3b8;font-weight:600;font-size:.82rem;border-bottom:1px solid #334155;padding:6px 10px;}
+  th.num,td.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+  td{padding:6px 10px;border-bottom:1px solid #334155;vertical-align:middle;}
+  tr.win td{background:rgba(34,197,94,.10);}
+  .barcell{width:38%;}
+  .bar{display:inline-block;width:calc(100% - 44px);height:12px;background:#243349;border-radius:6px;overflow:hidden;vertical-align:middle;}
+  .fill{height:100%;background:#38bdf8;}
+  .pct{margin-left:8px;color:#94a3b8;font-size:.8rem;}
+  .totalbox{background:#1e293b;border:1px solid #334155;border-left:3px solid #22c55e;border-radius:8px;padding:14px 18px;margin:14px 0;}
+  .totalbox .big{font-size:1.35rem;font-weight:700;color:#fff;}
+  .findbox{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:12px 18px;margin:12px 0;}
+  .findbox ul{margin:.5em 0 0;padding-left:1.1em;}
+  .findbox li{color:#cbd5e1;font-size:.9rem;margin:2px 0;font-variant-numeric:tabular-nums;}
+  code{background:#243349;padding:1px 6px;border-radius:5px;font-size:.85em;color:#cbd5e1;}
+</style></head><body><div class="wrap">
+<h1>chunkeval retrieval report</h1>
+<p class="sub">corpus <code>data/corpus</code> (9 docs) &middot; questions <code>data/questions.jsonl</code> (10)</p>
+<p class="sub">metric hit-rate@5 / MRR@5 &middot; retrieval: hand-rolled in-memory BM25 (k1=1.5, b=0.75), offline</p>
+
+<div class="totalbox">
+  <div class="big">recall@5: 0.90 at recursive/256/64</div>
+  <div class="sub" style="margin-top:4px">winning config, MRR@5 0.820</div>
+</div>
+
+<h2>Config sweep</h2>
+<table>
+<thead><tr><th>Config (splitter/size/overlap)</th><th class="num">Chunks</th><th>hit-rate@5</th><th class="num">MRR@5</th></tr></thead>
+<tbody><tr class='win'><td><code>recursive/256/64</code> &#9733;</td><td class='num'>39</td><td class='barcell'><div class='bar'><div class='fill' style='width:90%'></div></div><span class='pct'>0.90</span></td><td class='num'>0.820</td></tr><tr><td><code>fixed/256/64</code></td><td class='num'>27</td><td class='barcell'><div class='bar'><div class='fill' style='width:90%'></div></div><span class='pct'>0.90</span></td><td class='num'>0.775</td></tr><tr><td><code>sentence/256/0</code></td><td class='num'>29</td><td class='barcell'><div class='bar'><div class='fill' style='width:90%'></div></div><span class='pct'>0.90</span></td><td class='num'>0.720</td></tr><tr><td><code>sentence/256/64</code></td><td class='num'>29</td><td class='barcell'><div class='bar'><div class='fill' style='width:90%'></div></div><span class='pct'>0.90</span></td><td class='num'>0.720</td></tr><tr><td><code>recursive/256/0</code></td><td class='num'>29</td><td class='barcell'><div class='bar'><div class='fill' style='width:90%'></div></div><span class='pct'>0.90</span></td><td class='num'>0.720</td></tr><tr><td><code>sentence/128/0</code></td><td class='num'>45</td><td class='barcell'><div class='bar'><div class='fill' style='width:80%'></div></div><span class='pct'>0.80</span></td><td class='num'>0.800</td></tr><tr><td><code>sentence/128/64</code></td><td class='num'>45</td><td class='barcell'><div class='bar'><div class='fill' style='width:80%'></div></div><span class='pct'>0.80</span></td><td class='num'>0.800</td></tr><tr><td><code>recursive/128/0</code></td><td class='num'>56</td><td class='barcell'><div class='bar'><div class='fill' style='width:80%'></div></div><span class='pct'>0.80</span></td><td class='num'>0.725</td></tr><tr><td><code>recursive/128/64</code></td><td class='num'>63</td><td class='barcell'><div class='bar'><div class='fill' style='width:70%'></div></div><span class='pct'>0.70</span></td><td class='num'>0.600</td></tr><tr><td><code>fixed/128/64</code></td><td class='num'>78</td><td class='barcell'><div class='bar'><div class='fill' style='width:70%'></div></div><span class='pct'>0.70</span></td><td class='num'>0.517</td></tr><tr><td><code>fixed/256/0</code></td><td class='num'>27</td><td class='barcell'><div class='bar'><div class='fill' style='width:60%'></div></div><span class='pct'>0.60</span></td><td class='num'>0.550</td></tr><tr><td><code>fixed/128/0</code></td><td class='num'>45</td><td class='barcell'><div class='bar'><div class='fill' style='width:50%'></div></div><span class='pct'>0.50</span></td><td class='num'>0.450</td></tr></tbody>
+</table>
+
+<h2>Overlap finding</h2>
+<div class="findbox">
+<p style="margin:0">Overlap (0 vs 64) helped for at least one splitter/size on this corpus. The per-family breakdown below shows exactly where, and where it bought nothing.</p>
+<ul><li>fixed/128: hit-rate 0.50 at overlap 0 vs 0.70 at overlap 64  -&gt;  overlap helped (+0.20)</li><li>fixed/256: hit-rate 0.60 at overlap 0 vs 0.90 at overlap 64  -&gt;  overlap helped (+0.30)</li><li>recursive/128: hit-rate 0.80 at overlap 0 vs 0.70 at overlap 64  -&gt;  overlap hurt (-0.10)</li><li>recursive/256: hit-rate 0.90 at overlap 0 vs 0.90 at overlap 64  -&gt;  overlap changed nothing</li><li>sentence/128: hit-rate 0.80 at overlap 0 vs 0.80 at overlap 64  -&gt;  overlap changed nothing</li><li>sentence/256: hit-rate 0.90 at overlap 0 vs 0.90 at overlap 64  -&gt;  overlap changed nothing</li></ul>
+</div>
+
+<h2>How to read this</h2>
+<p class="sub">hit-rate@5 is the fraction of questions whose gold chunk (the right document and, when the question carries an answer span, a chunk that actually contains that span) landed in the top 5 retrieved chunks. MRR@5 is the mean of 1/rank of the first relevant chunk, counted 0 when none was in the top 5. Retrieval is a hand-rolled BM25 index in memory. No embedding API, no vector database, no network call.</p>
+<p class="sub" style="margin-top:24px">Generated by chunkeval. Offline, deterministic, standard library only.</p>
+</div></body></html>
