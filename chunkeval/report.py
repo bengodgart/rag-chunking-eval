@@ -35,7 +35,7 @@ def _ordered(results: List[ConfigResult]) -> List[ConfigResult]:
 def _headline(report: Report) -> str:
     winner = pick_winner(report.results)
     return (
-        f"recall@{report.k}: {winner.hit_rate:.2f} at {winner.config.label()} "
+        f"hit-rate@{report.k}: {winner.hit_rate:.2f} at {winner.config.label()} "
         f"(MRR@{report.k} {winner.mrr:.3f})"
     )
 
@@ -200,7 +200,7 @@ def render_html(report: Report) -> str:
 <p class="sub">metric hit-rate@{k} / MRR@{k} &middot; retrieval: hand-rolled in-memory BM25 (k1=1.5, b=0.75), offline</p>
 
 <div class="totalbox">
-  <div class="big">recall@{k}: {winner.hit_rate:.2f} at {html.escape(winner.config.label())}</div>
+  <div class="big">hit-rate@{k}: {winner.hit_rate:.2f} at {html.escape(winner.config.label())}</div>
   <div class="sub" style="margin-top:4px">winning config, MRR@{k} {winner.mrr:.3f}</div>
 </div>
 

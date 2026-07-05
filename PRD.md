@@ -4,7 +4,7 @@
 
 **Usefulness (from brief 10):** Chunking is tuned blind ("the art of chunking is striking the perfect balance"), and a January 2026 study even contradicts the old overlap defaults with a "no measurable benefit" finding. Existing chunk-lab tools visualize splits but do not measure retrieval quality of different configs against the user's own Q&A pairs, which is the thing that actually decides the config. This reframes the piece from a saturated visualizer into a differentiated eval, and hits the RAG rarely-evidenced differentiator directly: a before/after-on-chunking measurement is the senior version of "I dumped docs into a vector DB."
 
-## v1 scope (capped) — each item traces to the brief
+## v1 scope (capped): each item traces to the brief
 
 1. **Inputs**: a docs folder (`.txt` files, doc_id = file stem) plus a JSONL of `{question, doc_id, answer_span?}` pairs. A bundled sample corpus + questions ship in `data/`. (brief v1.1)
    - Code: `chunkeval/corpus.py`.
@@ -14,7 +14,7 @@
    - Code: `chunkeval/bm25.py`, `chunkeval/metrics.py`, `chunkeval/sweep.py`.
 4. **One output**: a config -> hit-rate@k / MRR table with the winning config highlighted, plus a one-line "overlap helped / did not" finding, committed as HTML + md. (brief v1.4)
    - Code: `chunkeval/report.py`; committed to `examples/sample-report.{md,html}`.
-5. **README opens with the headline** ("recall@5: 0.90 at recursive/256/64, and overlap only rescued the blind fixed splitter") plus a 30-second run block. (brief v1.5)
+5. **README opens with the headline** ("hit-rate@5: 0.90 at recursive/256/64, and overlap only rescued the blind fixed splitter") plus a 30-second run block. (brief v1.5)
    - `README.md`.
 
 ## The metric, exactly (brief: "the metric must be correct")

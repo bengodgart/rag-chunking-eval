@@ -154,7 +154,7 @@ Both match the tool's printed `0.60` and `0.550` for `fixed/256/0` exactly. The 
 - Sentence splitter: **0.90 at overlap 0 and 0.90 at overlap 64** (size 256). No change. It never cuts inside a sentence, so there is nothing for overlap to rescue.
 - Recursive splitter: **0.90 with and without overlap** at size 256; at size 128 overlap actually *hurt* slightly (0.80 -> 0.70) by pushing more near-duplicate chunks into the ranking.
 
-The best config on this corpus, `recursive/256/64` (recall@5 = 0.90, MRR@5 = 0.820), ties on hit-rate with `sentence/256/0` and `recursive/256/0`, both of which reach 0.90 with **zero overlap**. So the defensible reading is: on this corpus, choosing a boundary-aware splitter mattered more than adding overlap, and overlap's entire measured benefit was as a band-aid for the naive splitter. That is consistent with, and a sharper version of, the January 2026 "overlap gave no measurable benefit" result.
+The best config on this corpus, `recursive/256/64` (hit-rate@5 = 0.90, MRR@5 = 0.820), ties on hit-rate with `sentence/256/0` and `recursive/256/0`, both of which reach 0.90 with **zero overlap**. So the defensible reading is: on this corpus, choosing a boundary-aware splitter mattered more than adding overlap, and overlap's entire measured benefit was as a band-aid for the naive splitter. That is consistent with, and a sharper version of, the January 2026 "overlap gave no measurable benefit" result.
 
 ## Honest gaps (named, not hidden)
 

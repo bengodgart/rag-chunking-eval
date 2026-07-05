@@ -5,7 +5,7 @@
 On the bundled corpus, the headline finding is the interesting kind:
 
 ```
-recall@5: 0.90 at recursive/256/64  (a sentence or recursive splitter at size 256)
+hit-rate@5: 0.90 at recursive/256/64 (several size-256 configs tie at 0.90 hit-rate; recursive/256/64 wins on MRR)
 
 The blind fixed-size splitter needed overlap to get there: 0.60 with no overlap, 0.90 with 64.
 The boundary-aware splitters already hit 0.90 with ZERO overlap.
